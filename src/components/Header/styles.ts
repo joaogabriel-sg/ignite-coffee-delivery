@@ -6,7 +6,10 @@ export const Container = styled.header`
   justify-content: space-between;
   gap: 1.2rem;
 
-  padding: 3.2rem 0;
+  width: 100%;
+  max-width: 112rem;
+  padding: 3.2rem 2.4rem;
+  margin: 0 auto;
 `;
 
 export const MenuContainer = styled.div`
