@@ -1,10 +1,16 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
 import { coffee } from "../../shared/data/coffee";
+import {
+  formatCurrency,
+  getCurrencyFormatNumbersOnly,
+} from "../../shared/utils/currency";
 
 import * as S from "./styles";
 
 export function CoffeeList() {
+  const format = getCurrencyFormatNumbersOnly("BRL");
+
   return (
     <S.Container>
       <h2>Nossos cafés</h2>
@@ -25,7 +31,10 @@ export function CoffeeList() {
 
             <footer>
               <S.Price>
-                R$ <strong>{item.price}</strong>
+                R${" "}
+                <strong>
+                  {formatCurrency(item.price / 100, format, "pt-BR")}
+                </strong>
               </S.Price>
 
               <S.Quantity>
